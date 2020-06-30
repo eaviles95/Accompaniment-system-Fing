@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_133055) do
+ActiveRecord::Schema.define(version: 2020_06_30_142254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -68,6 +68,8 @@ ActiveRecord::Schema.define(version: 2020_06_30_133055) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "academic_unit_id"
+    t.index ["academic_unit_id"], name: "index_departments_on_academic_unit_id"
   end
 
   create_table "roles", force: :cascade do |t|
@@ -209,6 +211,7 @@ ActiveRecord::Schema.define(version: 2020_06_30_133055) do
   add_foreign_key "annotations", "tutorials"
   add_foreign_key "annotations", "users"
   add_foreign_key "careers", "departments"
+  add_foreign_key "departments", "academic_units"
   add_foreign_key "student_tutorials", "students", on_delete: :cascade
   add_foreign_key "student_tutorials", "tutorials", on_delete: :cascade
   add_foreign_key "studentannotations", "statusannotations"

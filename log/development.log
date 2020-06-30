@@ -326,3 +326,94 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 68ms (Views: 58.3ms | ActiveRecord: 2.1ms)
 
 
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4904498014501910790)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to AddAcademicUnitIdToDepartments (20200630142254)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "departments" ADD "academic_unit_id" bigint[0m
+  ↳ db/migrate/20200630142254_add_academic_unit_id_to_departments.rb:3
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE  INDEX  "index_departments_on_academic_unit_id" ON "departments"  ("academic_unit_id")[0m
+  ↳ db/migrate/20200630142254_add_academic_unit_id_to_departments.rb:3
+  [1m[35m (6.3ms)[0m  [1m[35mALTER TABLE "departments" ADD CONSTRAINT "fk_rails_c10830fea9"
+FOREIGN KEY ("academic_unit_id")
+  REFERENCES "academic_units" ("id")
+[0m
+  ↳ db/migrate/20200630142254_add_academic_unit_id_to_departments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200630142254"]]
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(4904498014501910790)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/users/1" for ::1 at 2020-06-30 10:23:22 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/enrique/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/enrique/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:7
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/users/show.html.erb:65
+  Rendered users/show.html.erb within layouts/application (186.1ms)
+  [1m[36mCACHE Role Load (0.1ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:72
+Completed 200 OK in 575ms (Views: 524.6ms | ActiveRecord: 16.0ms)
+
+
+Started GET "/" for ::1 at 2020-06-30 10:23:25 -0400
+Processing by WelcomeController#dashboard as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /home/enrique/.rvm/gems/ruby-2.3.1/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "studentannotations" WHERE "studentannotations"."typeannotation_id" = $1 AND "studentannotations"."derivation" = $2 AND "studentannotations"."statusannotation_id" = $3[0m  [["typeannotation_id", 2], ["derivation", 1], ["statusannotation_id", 1]]
+  ↳ app/controllers/application_controller.rb:109
+  [1m[36mCareer Load (0.6ms)[0m  [1m[34mSELECT "careers".* FROM "careers"[0m
+  ↳ app/controllers/application_controller.rb:23
+  [1m[36mTypetutorial Load (1.4ms)[0m  [1m[34mSELECT "typetutorials".* FROM "typetutorials" INNER JOIN "tutorials" ON "tutorials"."id" = "typetutorials"."tutorial_id" WHERE (extract(year  from dates) = 2017)[0m
+  ↳ app/controllers/welcome_controller.rb:173
+  [1m[36mSubject Load (0.6ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  ↳ app/controllers/welcome_controller.rb:38
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "subjects"[0m
+  ↳ app/controllers/welcome_controller.rb:41
+  [1m[36mTutorial Load (0.5ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials" WHERE (extract(year  from dates) = 2017)[0m
+  ↳ app/controllers/welcome_controller.rb:70
+  [1m[36mCACHE Subject Load (0.0ms)[0m  [1m[34mSELECT "subjects".* FROM "subjects"[0m
+  ↳ app/controllers/welcome_controller.rb:151
+  [1m[36mTutorial Load (1.2ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials" WHERE "tutorials"."subject" = $1[0m  [["subject", 1]]
+  ↳ app/controllers/welcome_controller.rb:152
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "student_tutorials" WHERE "student_tutorials"."tutorial_id" = $1 AND "student_tutorials"."present" = $2[0m  [["tutorial_id", 1], ["present", true]]
+  ↳ app/controllers/welcome_controller.rb:154
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "student_tutorials" WHERE "student_tutorials"."tutorial_id" = $1 AND "student_tutorials"."present" = $2[0m  [["tutorial_id", 3], ["present", true]]
+  ↳ app/controllers/welcome_controller.rb:154
+  [1m[36mTutorial Load (0.7ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials" WHERE "tutorials"."subject" = $1[0m  [["subject", 2]]
+  ↳ app/controllers/welcome_controller.rb:152
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "student_tutorials" WHERE "student_tutorials"."tutorial_id" = $1 AND "student_tutorials"."present" = $2[0m  [["tutorial_id", 2], ["present", true]]
+  ↳ app/controllers/welcome_controller.rb:154
+  [1m[36mTutorial Load (0.3ms)[0m  [1m[34mSELECT "tutorials".* FROM "tutorials" WHERE "tutorials"."subject" = $1[0m  [["subject", 3]]
+  ↳ app/controllers/welcome_controller.rb:152
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "students" WHERE "students"."status" = $1[0m  [["status", true]]
+  ↳ app/controllers/welcome_controller.rb:23
+  Rendering welcome/dashboard.html.erb within layouts/application
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/welcome/dashboard.html.erb:13
+  [1m[36mCACHE Career Load (0.0ms)[0m  [1m[34mSELECT "careers".* FROM "careers"[0m
+  ↳ app/views/welcome/dashboard.html.erb:92
+  Rendered welcome/dashboard.html.erb within layouts/application (30.8ms)
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  "roles".* FROM "roles" WHERE "roles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:72
+Completed 200 OK in 275ms (Views: 113.9ms | ActiveRecord: 35.5ms)
+
+
