@@ -127,7 +127,7 @@
             <div id="sidebar-menu">
         
             <ul>
-
+                    
                     <% if !request.path.start_with?('/students') && !request.path.start_with?('/tutors') && !request.path.start_with?('/tutorials') && !request.path.start_with?('/activities') && !request.path.start_with?('/admin') && !request.path.start_with?('/student_tutorials')&& !request.path.start_with?('/tutor_tutorials')%>
                         <li class="submenu">
                             <a class="activeoption active" href="/"><i class="fa fa-fw fa-bars"></i><span> Inicio </span> </a>
@@ -138,6 +138,55 @@
                         </li>
 
                      <%end%>
+
+                     <!-- Agregar facultad, departamento o carrera : Modificar -->
+                    <%if request.path.start_with?('/academic_units')%>
+                             <% if current_user.admin? %>
+                            <li class="submenu">
+                                <a href="#"><i class="fas fa-folder-plus"></i><span> Agregar </span> <span class="menu-arrow"></span></a>
+                                    <ul class="list-unstyled">
+                                        <% if current_user.admin?%>
+                                        <li><a class="activeoption active" href="/academic_units/new">Unidad Académica</a></li><%end%>
+                                        <% if current_user.admin?%>
+                                        <li><a class="activeoption active" href="/departments/new">Departamento o Escuela</a></li><%end%>
+                                        <% if current_user.admin?%>
+                                        <li><a class="activeoption active" href="/careers/new">Carrera</a></li> <%end%>
+                                    </ul>
+                            </li>
+                             <% end %>
+                      <%else%>
+                            <% if current_user.admin? %>
+                            <li class="submenu">
+                                <a href="#"><i class="fas fa-folder-plus"></i><span> Agregar </span> <span class="menu-arrow"></span></a>
+                                    <ul class="list-unstyled">
+                                        <% if current_user.admin?%>
+                                        <li><a href="/academic_units/new">Unidad Académica</a></li><%end%>
+                                        <% if current_user.admin?%>
+                                        <li><a href="/departments/new">Departamento o Escuela</a></li><%end%>
+                                        <% if current_user.admin?%>
+                                        <li><a href="/careers/new">Carrera</a></li><%end%>
+                                        
+                                    </ul>
+                            </li>
+                             <% end %>
+                    <%end%>
+
+
+                     <!-- Mostrar Facultades: Modificar -->
+                    <%if request.path.start_with?('/academic_units')%>
+                             <% if current_user.admin?%>
+                                <li class="submenu">
+                                    <a href="/academic_units"><i class="fas fa-landmark"></i><span> Facultades </span></a>
+                                </li>
+                            <% end %>
+                     <%else%>
+                            <% if current_user.admin?%>
+                                <li class="submenu">
+                                    <a href="/academic_units"><i class="fas fa-landmark"></i><span> Facultades </span></a>
+                                </li>
+                            <% end %>
+                     <%end%>
+
 
                     <%if request.path.start_with?('/students')%>
                              <% if current_user.admin? or current_user.coordinador? or current_user.tutor?%>
@@ -164,6 +213,9 @@
 
 
                      <%end%>
+
+
+
                      <%if request.path.start_with?('/tutors')%>
                              <% if current_user.admin? or current_user.coordinador? %>
                             <li class="submenu">

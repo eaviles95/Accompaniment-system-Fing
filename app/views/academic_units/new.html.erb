@@ -1,0 +1,84 @@
+
+<div class="content-page">
+  <div class="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-12">
+          <div class="breadcrumb-holder">
+            <%= link_to '<i class="fas fa-arrow-left"></i> '.html_safe, :back , class: "btn btn-secondary float-left" %>
+              <h1 class="main-title float-left">Nueva unidad académica</h1>
+              <ol class="breadcrumb float-right"></ol>
+              <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+  <!-- end row -->
+
+
+
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+        <div class="card mb-3">
+          <div class="card-body">
+            
+          <%= form_with scope: :academic_unit, url: academic_units_path, local: true do |form| %>
+          <div class="form-group">
+            <%= form.label :Nombre %><br>
+            <%= form.text_field :name %>
+          </div>
+          <%= form.submit %>
+          <% end %>
+      </div>
+    </div>
+
+        
+      </div>
+      
+
+    </div>
+
+
+    
+
+  </div>
+
+  
+  
+
+</div>
+
+
+<!-- 
+
+<div class="card" align="center">
+  <h5 class="card-header">Featured</h5>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+-->
+
+<style>
+  .btn-secondary{
+  margin-top: 8px;
+  color: white !important;
+  background-color: #a3a3a3 !important;
+  border-color: #a3a3a3 !important;
+}
+.btn-secondary:hover{
+  background-color: #7f7e7e !important;
+  border-color: #7f7e7e !important;
+ 
+}
+.imgRedonda {
+    width:300px;
+    height:300px;
+    border-radius:150px;
+}
+h3{
+	font-size: 16px;
+}
+</style>

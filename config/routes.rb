@@ -52,6 +52,8 @@ Rails.application.routes.draw do
   resources :student_tutorials
   resources :tutor_tutorials
   resources :activities
+  resources :academic_units
+
  # resources :tutor_tutorials, except:[:delete]
 
   get '/404', to: 'errors#not_found'
