@@ -1,6 +1,5 @@
 class CareersController < ApplicationController
-  before_action :authenticate_user!
-  before_action :notification 
+   
 
   # GET /careers
   # GET /careers.json
@@ -70,7 +69,7 @@ class CareersController < ApplicationController
   private
    
     def career_params
-      params.permit(:code,:name,:department_id)
+      params.require(:career).permit(:code,:name,:department_id)
     end
 
 end

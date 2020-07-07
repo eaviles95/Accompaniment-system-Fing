@@ -1,5 +1,5 @@
 class DepartmentsController < ApplicationController
-  before_action :set_department, only: [:show, :edit, :update, :destroy]
+
 
   # GET /departments
   # GET /departments.json
@@ -91,9 +91,7 @@ class DepartmentsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_department
-      @department = Department.find(params[:id])
-    end
+   
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def department_params
