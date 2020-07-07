@@ -1,22 +1,37 @@
-<%= form_with(model: department, local: true) do |form| %>
-  <% if department.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
 
-      <ul>
-      <% department.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+<div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+          <div class="card mb-3">
+            <div class="card-body">
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
+                <%= form_with(model: department, local: true) do |form| %>
+                  <% if department.errors.any? %>
+                    <div id="error_explanation">
+                      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+                      <ul>
+                      <% department.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                      </ul>
+                    </div>
+                  <% end %>
+
+                  <div class="field">
+                    <%= form.label :name %>
+                    <%= form.text_field :name %>
+                  </div>
+                  
+                  <div class="field">
+                    <%= form.label :academic_unit_id %>
+                    <%= form.number_field :academic_unit_id %>
+                  </div>
+
+                  <div class="actions">
+                    <%= form.submit %>
+                  </div>
+                <% end %>
+            </div>
+          </div>  
+        </div>
+</div>

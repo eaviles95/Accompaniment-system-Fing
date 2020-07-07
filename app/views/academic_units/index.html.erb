@@ -1,0 +1,65 @@
+
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-xl-12">
+                  <div class="breadcrumb-holder">
+                    <%= link_to '<i class="fas fa-arrow-left"></i> '.html_safe, :back , class: "btn btn-secondary float-left" %>
+                      <h1 class="main-title float-left">Unidades Académicas </h1>
+                      <ol class="breadcrumb float-right"></ol>
+                      <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+                    <div class="card mb-3">
+                      <div class="card-body">
+                        <table>
+                            <% @academic_units.each do |academic_unit| %>
+                                <tr>
+                                    <td><%= academic_unit.name %></td>
+                                    <td><%= link_to 'Show', academic_unit_path(academic_unit) %></td>
+                                    <td><%= link_to 'Edit', edit_academic_unit_path(academic_unit) %></td>
+                                    <td><%= link_to 'Destroy', academic_unit_path(academic_unit),
+                                        method: :delete,
+                                        data: { confirm: 'Are you sure?' } %></td>
+                                </tr>
+                            <% end %>
+                        </table>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>            
+    </div>
+</div>    
+
+
+
+
+<style>
+    .btn-secondary{
+    margin-top: 8px;
+    color: white !important;
+    background-color: #a3a3a3 !important;
+    border-color: #a3a3a3 !important;
+  }
+  .btn-secondary:hover{
+    background-color: #7f7e7e !important;
+    border-color: #7f7e7e !important;
+   
+  }
+  .imgRedonda {
+      width:300px;
+      height:300px;
+      border-radius:150px;
+  }
+  h3{
+      font-size: 16px;
+  }
+  </style>

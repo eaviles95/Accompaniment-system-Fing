@@ -1,6 +1,4 @@
 
-
-
 <div class="content-page">
   <div class="content">
     <div class="container-fluid">
@@ -8,30 +6,20 @@
         <div class="col-xl-12">
           <div class="breadcrumb-holder">
             <%= link_to '<i class="fas fa-arrow-left"></i> '.html_safe, :back , class: "btn btn-secondary float-left" %>
-            <h1 class="main-title float-left">Unidad Académica creada</h1>
+              <h1 class="main-title float-left">Nueva unidad académica</h1>
               <ol class="breadcrumb float-right"></ol>
               <div class="clearfix"></div>
           </div>
         </div>
       </div>
-      
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
-          <div class="card mb-3">
-            <div class="card-body">
-              
-            <div class="form-group">
-              <p>
-                <strong>Nombre:</strong>
-                <%= @academic_unit.name %>
-              </p>
-            </div>
-        </div>
-      </div>
-    </div>   
+      <!-- end row -->
+
+      <%= render 'form' %>
+      <!-- end row -->
+
+    </div>
   </div>
 </div>
-
 
 
 <style>
