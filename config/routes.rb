@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   resources :typetutorials
   resources :admin
 
+  resources :academic_units do
+    resources :departments
+  end
+
   post 'upload', to: "admin#upload"
   get '/actualize', to:"admin#actualize"
   post 'chooseCarrer', to: "departments#chooseCarrer"
@@ -52,7 +56,8 @@ Rails.application.routes.draw do
   resources :student_tutorials
   resources :tutor_tutorials
   resources :activities
-  resources :academic_units
+  
+  
 
  # resources :tutor_tutorials, except:[:delete]
 

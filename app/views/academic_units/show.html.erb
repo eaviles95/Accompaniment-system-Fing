@@ -8,7 +8,7 @@
         <div class="col-xl-12">
           <div class="breadcrumb-holder">
             <%= link_to '<i class="fas fa-arrow-left"></i> '.html_safe, :back , class: "btn btn-secondary float-left" %>
-            <h1 class="main-title float-left">Unidad Académica creada</h1>
+            <h1 class="main-title float-left">Unidad Académica</h1>
               <ol class="breadcrumb float-right"></ol>
               <div class="clearfix"></div>
           </div>
@@ -30,6 +30,35 @@
       </div>
     </div>   
   </div>
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+            <div class="card mb-3">
+              <div class="card-body">
+                
+              
+                
+                    <% @academic_unit.departments.each do |department| %>
+                      <p>
+                        <strong>Departamento:</strong>
+                        <%= department.name %>
+                      </p>
+                      <td><%= link_to 'Show', department %></td>
+                      <td><%= link_to 'Edit', edit_department_path(department) %></td>
+                      <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    <% end %>
+                          
+
+
+              </div>
+          </div>
+        </div>
+      </div>   
+      </div>
+  
+    </div>
+  </div>
+</div>
 </div>
 
 
