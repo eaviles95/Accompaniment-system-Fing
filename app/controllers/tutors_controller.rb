@@ -68,6 +68,7 @@ class TutorsController < ApplicationController
   # POST /tutors
   # POST /tutors.json
   def create
+    @department = Department.find(params[:department_id])
     unless current_user.admin? or current_user.coordinador?
       redirect_to '/', :alert => "Acceso denegado." #por ahora solo un adminsitrador puede ver esto
     end

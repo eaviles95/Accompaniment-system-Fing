@@ -29,10 +29,59 @@
         </div>   
       </div>
 
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="form-group">
+                <h3>Carreras</h3>
+                <% @department.careers.each do |career| %>
+                  <%= career.name%>
+                  <%= career.code%>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="form-group">
+                <h3>Estudiantes del departamento</h3>
+                <% @department.students.each do |student| %>
+                  <%= student.name%>
+                  <%= student.rut%>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="form-group">
+                <h3>Tutores del departamento</h3>
+                <% @department.tutors.each do |tutor| %>
+                  <%= tutor.name%>
+                  
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </div>
+    
+    </div>
 
     </div>
   </div>
-</div>
+
 
 
 

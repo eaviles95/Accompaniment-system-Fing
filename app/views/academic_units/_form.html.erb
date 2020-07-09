@@ -3,16 +3,15 @@
           <div class="card mb-3">
             <div class="card-body">
             <%= form_with scope: :academic_unit, url: academic_units_path, local: true do |form| %>
-            <div class="form-group">
-              <%= form.label :Nombre %><br>
-              <%= form.text_field :name %>
+            <div class="form-group col-md-3">
+              <%= form.label :Nombre%><br>
+              <%= form.text_field :name, :required => true, class: "form-control", :style=>"text-transform:uppercase"%>
             </div>
-            <%= form.submit %>
-            <% end %>
-
-            
+            <%= form.submit "Guardar", class: "btn btn-primary" %>
+            <% end %>            
             </div>
           </div>  
         </div>
 </div> 
+
 

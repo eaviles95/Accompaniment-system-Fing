@@ -248,6 +248,7 @@
               <div class="col-md-3">
                 <%= f.number_field :level,:label=>"Nivel",:min=>1,:max=>12,:required => true %>
               </div>
+              
               <div class="col-md-12">
                 <%= f.select(:careercode, options_from_collection_for_select(Career.where(id:@carreers4department[0]).or(Career.where(id:@carreers4department[1])).or(Career.where(id:@carreers4department[2])).or(Career.where(id:@carreers4department[3])), :code, :name),:label=>"Carrera",:required => true) %>
               </div>

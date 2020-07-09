@@ -17,20 +17,25 @@
                     </div>
                   <% end %>
 
-                  <div class="field">
-                    <%= form.label :name %>
-                    <%= form.text_field :name %>
-                  </div>
-                  
-                  <div class="field">
-                    <%= form.label :academic_unit_id %>
-                    <%= form.text_field :academic_unit_id %>
+                  <div class="form-group col-md-3">
+                    <div class="field">
+                      <%= form.label :name, :label=>"Nombre" %>
+                      <%= form.text_field :name, :required => true, class: "form-control" %>
+                    </div>
+                    
+                    <div class="field">
+                      <%= form.label :"Id Unidad académica" %>
+                      <%= form.text_field :academic_unit_id, :required => true, class: "form-control" %>
+                    </div>
+  
+                    <div class="actions">
+                      <%= form.submit "Guardar", class: "btn btn-primary"%>
+                    </div>
+                  <% end %>
+
                   </div>
 
-                  <div class="actions">
-                    <%= form.submit %>
-                  </div>
-                <% end %>
+                  
             </div>
           </div>  
         </div>

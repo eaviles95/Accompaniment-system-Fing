@@ -20,6 +20,7 @@ class DepartmentsController < ApplicationController
 
   # GET /departments/1/edit
   def edit
+    @department = Department.find(params[:id])
   end
 
   def chooseCarrer
@@ -48,7 +49,6 @@ class DepartmentsController < ApplicationController
   # POST /departments
   # POST /departments.json
   def create
-    @academic_unit = AcademicUnit.find(params[:academic_unit_id])
     @department = Department.new(department_params)
     @department.name= params[:department][:name].upcase!
 

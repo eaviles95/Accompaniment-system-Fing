@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_30_142254) do
+ActiveRecord::Schema.define(version: 2020_07_09_035457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -123,6 +123,8 @@ ActiveRecord::Schema.define(version: 2020_06_30_142254) do
     t.string "lastnamema"
     t.boolean "status"
     t.integer "entry"
+    t.bigint "department_id"
+    t.index ["department_id"], name: "index_students_on_department_id"
   end
 
   create_table "subjects", force: :cascade do |t|
@@ -168,6 +170,8 @@ ActiveRecord::Schema.define(version: 2020_06_30_142254) do
     t.string "lastnamema"
     t.string "dv"
     t.boolean "status"
+    t.bigint "department_id"
+    t.index ["department_id"], name: "index_tutors_on_department_id"
   end
 
   create_table "typeannotations", force: :cascade do |t|
@@ -218,8 +222,10 @@ ActiveRecord::Schema.define(version: 2020_06_30_142254) do
   add_foreign_key "studentannotations", "students", on_delete: :cascade
   add_foreign_key "studentannotations", "typeannotations"
   add_foreign_key "studentannotations", "users"
+  add_foreign_key "students", "departments"
   add_foreign_key "tutor_tutorials", "tutorials", on_delete: :cascade
   add_foreign_key "tutor_tutorials", "tutors", on_delete: :cascade
+  add_foreign_key "tutors", "departments"
   add_foreign_key "typetutorials", "tutorials"
   add_foreign_key "typetutorials", "types"
   add_foreign_key "users", "roles", on_delete: :nullify

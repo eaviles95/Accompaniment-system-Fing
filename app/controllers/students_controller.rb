@@ -195,13 +195,13 @@ class StudentsController < ApplicationController
     def student_params
       params.require(:student).permit(
         :rut,:firstname,:lastname,:email,:careercode,:level,:dv,:lastnamema,:status,:entry, 
-        :studentannotations_attributes=> [:times,:comment,:statusannotation_id,:typeannotation_id,:user_id, :id,:derivation]
+        :studentannotations_attributes=> [:times,:comment,:statusannotation_id,:typeannotation_id,:user_id, :id,:derivation, :department_id]
         )
     end
 
     def studentannotations_params
       params.require(:student).permit( 
-        :studentannotations_attributes=> [:times,:comment,:statusannotation_id,:typeannotation_id,:user_id, :id,:derivation]
+        :studentannotations_attributes=> [:times,:comment,:statusannotation_id,:typeannotation_id,:user_id, :id,:derivation, :department_id]
         )
     end
 

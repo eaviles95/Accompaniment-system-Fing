@@ -18,18 +18,32 @@
                 <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
                     <div class="card mb-3">
                       <div class="card-body">
-                        <table>
-                            <% @academic_units.each do |academic_unit| %>
-                                <tr>
-                                    <td><%= academic_unit.name %></td>
-                                    <td><%= link_to 'Show', academic_unit_path(academic_unit) %></td>
-                                    <td><%= link_to 'Edit', edit_academic_unit_path(academic_unit) %></td>
-                                    <td><%= link_to 'Destroy', academic_unit_path(academic_unit),
-                                        method: :delete,
-                                        data: { confirm: 'Are you sure?' } %></td>
-                                </tr>
-                            <% end %>
-                        </table>
+                        <ul class="list-group">
+                          <% @academic_units.each do |academic_unit| %>
+                          <li class="list-group-item">
+                            <div class="row">
+                            <div class="col-sm">
+                                <%= academic_unit.id %>
+                              </div>
+                              <div class="col-sm">
+                                <%= academic_unit.name %>
+                              </div>
+                              <div class="col-sm">
+                                <%= link_to 'Ver', academic_unit_path(academic_unit), class: "btn btn-primary" %>
+                              </div>
+                              <div class="col-sm">
+                                <%= link_to 'Editar', edit_academic_unit_path(academic_unit) , class: "btn btn-primary"%>
+                              </div>
+                              <div class="col-sm">
+                                <%= link_to 'Eliminar', academic_unit_path(academic_unit),
+                                    method: :delete,
+                                    data: { confirm: '¿Seguro que quieres eliminar esta unidad académica?' } , class: "btn btn-primary"%>
+                              </div>
+                            </div>
+                           
+                          </li>
+                          <% end %>
+                        </ul>
                       </div>
                     </div>
                 </div>
@@ -43,8 +57,14 @@
 
 
 <style>
-    .btn-secondary{
+  .btn-primary{
     margin-top: 8px;
+    color: white !important;
+    background-color: #002F6C !important;
+    border-color: #002F6C  !important;
+  }
+  .btn-secondary{
+
     color: white !important;
     background-color: #a3a3a3 !important;
     border-color: #a3a3a3 !important;

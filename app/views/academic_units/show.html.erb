@@ -35,20 +35,32 @@
           <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
             <div class="card mb-3">
               <div class="card-body">
-                
-              
-                
-                    <% @academic_unit.departments.each do |department| %>
-                      <p>
-                        <strong>Departamento:</strong>
-                        <%= department.name %>
-                      </p>
-                      <td><%= link_to 'Show', department %></td>
-                      <td><%= link_to 'Edit', edit_department_path(department) %></td>
-                      <td><%= link_to 'Destroy', department, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                    <% end %>
-                          
-
+      
+                        <ul class="list-group">
+                          <% @academic_unit.departments.each do |department|%>
+                          <li class="list-group-item">
+                            <div class="row">
+                            <div class="col-sm">
+                                <%= department.id %>
+                              </div>
+                              <div class="col-sm">
+                                <%= department.name %>
+                              </div>
+                              <div class="col-sm">
+                                <%= link_to 'Ver', department_path(department), class: "btn btn-primary" %>
+                              </div>
+                              <div class="col-sm">
+                                <%= link_to 'Editar', department_path(department) , class: "btn btn-primary"%>
+                              </div>
+                              <div class="col-sm">
+                                <%= link_to 'Eliminar', department_path(department),
+                                    method: :delete,
+                                    data: { confirm: '¿Seguro que quieres eliminar esta unidad académica?' } , class: "btn btn-primary"%>
+                              </div>
+                            </div>
+                          </li>
+                          <% end %>
+                        </ul>
 
               </div>
           </div>
@@ -64,6 +76,12 @@
 
 
 <style>
+  .btn-primary{
+    margin-top: 8px;
+    color: white !important;
+    background-color: #002F6C !important;
+    border-color: #002F6C  !important;
+}
   .btn-secondary{
   margin-top: 8px;
   color: white !important;

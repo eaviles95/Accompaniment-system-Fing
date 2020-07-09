@@ -6,12 +6,14 @@
 
 
               <%= form_with(model: career, local: true) do |form| %>
+              <div class="form-group col-md-3"> 
                 <% if career.errors.any? %>
                   <div id="error_explanation">
                     <h2><%= pluralize(career.errors.count, "error") %> prohibited this career from being saved:</h2>
 
                     <ul>
                     <% career.errors.full_messages.each do |message| %>
+                      
                       <li><%= message %></li>
                     <% end %>
                     </ul>
@@ -19,25 +21,25 @@
                 <% end %>
 
                 <div class="field">
-                  <%= form.label :code %>
-                  <%= form.text_field :code %>
+                  <%= form.label :"Código de la carrera" %>
+                  <%= form.text_field :code, :required => true, class: "form-control" %>
                 </div>
 
                 <div class="field">
-                  <%= form.label :name %>
-                  <%= form.text_field :name %>
+                  <%= form.label :"Nombre" %>
+                  <%= form.text_field :name, :required => true, class: "form-control" %>
                 </div>
 
                 <div class="field">
-                  <%= form.label :department_id %>
-                  <%= form.text_field :department_id %>
+                  <%= form.label :"Id del departamento" %>
+                  <%= form.text_field :department_id, :required => true, class: "form-control" %>
                 </div>
 
                 <div class="actions">
-                  <%= form.submit %>
+                  <%= form.submit "Guardar", class: "btn btn-primary"  %>
                 </div>
               <% end %>
-
+              </div>
             </div>
           </div>  
         </div>
