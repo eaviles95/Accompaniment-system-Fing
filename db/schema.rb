@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_09_035457) do
+ActiveRecord::Schema.define(version: 2020_07_10_142936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -207,6 +207,8 @@ ActiveRecord::Schema.define(version: 2020_07_09_035457) do
     t.string "firstname"
     t.string "lastname"
     t.bigint "role_id"
+    t.bigint "department_id"
+    t.index ["department_id"], name: "index_users_on_department_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["role_id"], name: "index_users_on_role_id"
@@ -228,5 +230,6 @@ ActiveRecord::Schema.define(version: 2020_07_09_035457) do
   add_foreign_key "tutors", "departments"
   add_foreign_key "typetutorials", "tutorials"
   add_foreign_key "typetutorials", "types"
+  add_foreign_key "users", "departments"
   add_foreign_key "users", "roles", on_delete: :nullify
 end

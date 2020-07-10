@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :annotation , dependent: :delete_all
   has_many :studentannotations
   belongs_to  :role
+  belongs_to :department
 
   def set_default_role
     self.rolesdevise ||= :indef
