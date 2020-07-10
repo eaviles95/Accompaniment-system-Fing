@@ -83,6 +83,7 @@
                     <tbody>
                       <% @students.each do |student| %>
                       <tr >                  
+                    <% if student.department_id == current_user.department_id%>
                      
 					      <td> <%=student.rut%>-<%=student.dv%> </td>
 					      <td> <%=student.firstname%> </td>
@@ -175,6 +176,8 @@
             		   </tr>
                     
                      <%end%>
+                     <%end%>
+
                     </tbody>
                   </table>
                   </div>
