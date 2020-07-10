@@ -35,7 +35,7 @@ class UsersController < ApplicationController
         @user.rolesdevise = :supervisor 
         
       end
-  
+    #TO-DO:  Aquí ver la opción de cambiar contraseña.
     @user.password= @user.email
     @user.password_confirmation=@user.email
     @user.firstname.capitalize!
