@@ -9,7 +9,8 @@ require 'faker'
 			     email:Faker::Internet.email,
 			     careercode: 1353,
 			     level: 4,
-			     phone: Faker::Number.number(digits: 9))
+				 phone: Faker::Number.number(digits: 9),
+				 department_id: 4)
 end
 
 
@@ -335,7 +336,8 @@ user= User.create! :firstname => 'Administrador',
 			  :rolesdevise => 1,
 			   :password => '123456',
 			    :password_confirmation => '123456',
-			     :role_id =>1
+				 :role_id =>1,
+				 	:department_id => 4
 user.save!
 user2= User.create! :firstname => 'Esteban',
 				:lastname => 'Reyes',
@@ -343,7 +345,9 @@ user2= User.create! :firstname => 'Esteban',
 			  :rolesdevise => 2,
 			   :password => '123456',
 			    :password_confirmation => '123456',
-			    :role_id =>2
+				:role_id =>2,
+				  :department_id => 4
+				
 user2.save!
 user3= User.create! :firstname => 'Sofía',
 				:lastname => 'González',
@@ -351,7 +355,9 @@ user3= User.create! :firstname => 'Sofía',
 			  :rolesdevise => 3,
 			   :password => '123456',
 			    :password_confirmation => '123456',
-			     :role_id =>3
+				 :role_id =>3,
+				  :department_id => 4
+				 
 user3.save!
 
 user4= User.create! :firstname => 'Sofía',
@@ -360,7 +366,9 @@ user4= User.create! :firstname => 'Sofía',
 			  :rolesdevise => 1,
 			   :password => '123456',
 			    :password_confirmation => '123456',
-			     :role_id =>1
+				 :role_id =>1,
+				  :department_id => 4
+				 
 user4.save!
 
 

@@ -4,10 +4,7 @@
           <div class="card mb-3">
             <div class="card-body">
 
-            <%= form_with(model: @academic_unit) do |f| %>
-                <%= @academic_unit.name %>
-
-            <% end %>
+            
 
                 <%= form_with(model: department, local: true) do |form| %>
                   <% if department.errors.any? %>
