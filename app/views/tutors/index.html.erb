@@ -209,6 +209,7 @@
                 <div class="col-md-5">
                   <%= f.text_field :rut,:label=>"Rut del alumno",:required => true,:onkeypress =>"return isNumberKey(event)" %>
                 </div>
+                
                 <div class="col-md-1" style="margin-top: 20px; font-size: 30px; text-align: center; margin-left: -10px; margin-right: -10px;">
                   -
                 </div>
@@ -216,7 +217,9 @@
                  <%= f.text_field :dv, label: false ,:required => true,:onkeypress=>"return check(event)",:maxlength=>"1" %>
               </div>
 
-             
+             <div class="col-md-12">
+                  <%= f.text_field :department_id,:label=>"Id Departamento",:required => true,:onkeypress =>"return isNumberKey(event)" %>
+                </div>
              
               <div class="col-md-12">
                 <%= f.text_field :firstname,:label=>"Nombres",:required => true,:onkeypress=>"return isWord(event)", :style=>"text-transform:uppercase" %>

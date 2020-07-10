@@ -232,11 +232,6 @@ Career.create(code:16055,name:" Periodismo",department_id:28)
 Career.create(code:16060,name:" Psicología",department_id:29)
 
 
-
-
-
-
-
 Career.create(code:16089,name:"	Tecnología en Telecomunicaciones",department_id:19)
 Career.create(code:16085,name:"	Tecnología en Automatización Industrial",department_id:19)
 Career.create(code:16082,name:"	Tecnología en Construcciones",department_id:19)

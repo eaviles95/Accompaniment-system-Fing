@@ -224,11 +224,11 @@
                 <%= f.text_field :dv, label: false ,:required => true,:onkeypress=>"return check(event)",:maxlength=>"1" %>
               </div>
               <div class="col-md-3">
-                <%= f.number_field :entry,:label=>"Año de ingreso",:min=>2010,:max=>Time.zone.now.year,:value => @period,:required => true,:id => 'anioingreso'%>
-                
-               
+                <%= f.number_field :entry,:label=>"Año de ingreso",:min=>2010,:max=>Time.zone.now.year,:value => @period,:required => true,:id => 'anioingreso'%> 
               </div>
-
+              <div class="col-md-12">
+                  <%= f.text_field :department_id,:label=>"Id Departamento",:required => true,:onkeypress =>"return isNumberKey(event)" %>
+                </div>
              
               <div class="col-md-12">
                 <%= f.text_field :firstname,:label=>"Nombres",:required => true,:onkeypress=>"return isWord(event)", :style=>"text-transform:uppercase" %>
