@@ -11,7 +11,7 @@
                                             <div class="breadcrumb-holder">
                                                     <h1 class="main-title float-left">
                                                         <% @department.each do |d|%>
-                                                             <%if d.id == @departmentid.to_i%>
+                                                             <%if d.id == current_user.department_id%>
                                                              <%= d.name%>
                                                              <%end%>
                                                         <%end%>
@@ -90,7 +90,7 @@
                                             </h3>
                                                 
                                                     <% @careers.each do |c|%>
-                                                        <%if c.id == @carreers4department[0]%>
+                                                        <%if c.department_id == current_user.department_id%>
                                                             <p> <%= c.name%></p>
                                                          <%end%>
                                                     <%end%>
@@ -163,7 +163,7 @@
                                                 </div>
                                             </h3>
                                                <% @careers.each do |c|%>
-                                                        <%if c.id == @carreers4department[1]%>
+                                                        <%if c.department_id == current_user.department_id%>
                                                             <p> <%= c.name%></p>
                                                          <%end%>
                                                     <%end%>
@@ -230,7 +230,7 @@
                                                 </div>
                                             </h3>
                                                 <% @careers.each do |c|%>
-                                                        <%if c.id == @carreers4department[2]%>
+                                                        <%if c.department_id == current_user.department_id%>
                                                             <p> <%= c.name%></p>
                                                          <%end%>
                                                     <%end%>
@@ -302,7 +302,7 @@
                                                 </div>
                                             </h3>
                                                 <% @careers.each do |c|%>
-                                                        <%if c.id == @carreers4department[3]%>
+                                                        <%if c.department_id == current_user.department_id%>
                                                             <p> <%= c.name%></p>
                                                          <%end%>
                                                     <%end%>
