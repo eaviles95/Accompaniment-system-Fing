@@ -279,6 +279,21 @@
                                 </li>
                                 
                      <%end%>
+
+
+                     <%if request.path.start_with?('/users/sign_up')%>
+                             <% if current_user.admin?%>
+                                <li class="submenu">
+                                    <a href="/users/sign_up"><i class="fas fa-landmark"></i><span> Agregar Usuario </span></a>
+                                </li>
+                            <% end %>
+                     <%else%>
+                            <% if current_user.admin?%>
+                                <li class="submenu">
+                                    <a href="/users/sign_up"><i class="fas fa-user"></i><span> Agregar Usuario </span></a>
+                                </li>
+                            <% end %>
+                     <%end%>
                              
 
         <style>

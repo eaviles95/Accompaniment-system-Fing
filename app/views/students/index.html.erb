@@ -232,6 +232,10 @@
               <div class="col-md-12">
                   <%= f.text_field :department_id,:label=>"Id Departamento",:required => true,:onkeypress =>"return isNumberKey(event)" %>
                 </div>
+
+                <div class="col-md-12">
+                <%= f.select(:department_id, options_from_collection_for_select(Department.all, :id, :name ),:label=>"Departamento",:required => true) %>
+              </div>
              
               <div class="col-md-12">
                 <%= f.text_field :firstname,:label=>"Nombres",:required => true,:onkeypress=>"return isWord(event)", :style=>"text-transform:uppercase" %>

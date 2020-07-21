@@ -71,7 +71,7 @@ prepend_before_action :require_no_authentication, only: :cancel
 
    private
    def user_params
-      params.require(:user).permit(:firstname, :lastname,:rolesdevise, :role_id,:password, :password_confirmation, :email)
+      params.require(:user).permit(:firstname, :lastname,:rolesdevise, :role_id,:password, :password_confirmation, :email, :department_id)
     end
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

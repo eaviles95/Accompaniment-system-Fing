@@ -21,14 +21,15 @@
 
                   <div class="form-group col-md-3">
                     <div class="field">
-                      <%= form.label :name, :label=>"Nombre" %>
+                      <%= form.label :nombre, :label=>"Nombre" %>
                       <%= form.text_field :name, :required => true, class: "form-control" %>
                     </div>
                     
                     <div class="field">
-                      <%= form.label :"Id Unidad académica" %>
-                      <%= form.text_field :academic_unit_id, :required => true, class: "form-control" %>
+                      <%= form.select(:academic_unit_id, options_from_collection_for_select(AcademicUnit.all, :id, :name ),:label=>"Unidad académica",:required => true) %>
                     </div>
+
+
   
                     <div class="actions">
                       <%= form.submit "Guardar", class: "btn btn-primary"%>
