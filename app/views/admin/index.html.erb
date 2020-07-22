@@ -787,7 +787,6 @@
                 
 				<div class="col-md-6">
 	                <%= f.select(:department_id, options_from_collection_for_select(Department.all, :id, :name ),:label=>"Departamento",:required => true) %>
-
 				  </div>
               
                    </div>
@@ -861,10 +860,15 @@
         	<%= bootstrap_form_for(:department, :url => '/departments', :html => { :method => :post }) do |f|   %>
             
               	   <div class="form-row">
-	                  	  <div class="col-md-12">
-			                <%= f.text_field :name,:label=>"Nombre",:required => true, :value => '' %>
-			              
-			              </div>
+	                  	<div class="col-md-12">
+			               <%= f.text_field :name,:label=>"Nombre",:required => true, :value => '' %>
+			            </div>
+
+						
+
+						  
+
+						  
 
          				
 

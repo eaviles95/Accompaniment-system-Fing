@@ -6,6 +6,7 @@ class AdminController < ApplicationController
   	unless current_user.admin?
       redirect_to '/', :alert => "Acceso denegado." #por ahora solo un adminsitrador puede ver esto
     end
+    @academic_units = AcademicUnit.all
     @users = User.all
     @subjects = Subject.all
     @user = User.new
