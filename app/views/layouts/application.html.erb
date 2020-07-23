@@ -171,6 +171,20 @@
                              <% end %>
                     <%end%>
 
+                     <%if request.path.start_with?('/users/sign_up')%>
+                             <% if current_user.admin?%>
+                                <li class="submenu">
+                                    <a href="/admin"><i class="fas fa-users-cog"></i><span> Configuración </span></a>
+                                </li>
+                            <% end %>
+                     <%else%>
+                            <% if current_user.admin?%>
+                                <li class="submenu">
+                                    <a href="/admin"><i class="fas fa-users-cog"></i><span> Configuración </span></a>
+                                </li>
+                            <% end %>
+                     <%end%>
+
 
                      <!-- Mostrar Facultades: Modificar -->
                     <%if request.path.start_with?('/academic_units')%>
@@ -281,19 +295,7 @@
                      <%end%>
 
 
-                     <%if request.path.start_with?('/users/sign_up')%>
-                             <% if current_user.admin?%>
-                                <li class="submenu">
-                                    <a href="/admin"><i class="fas fa-users-cog"></i><span> Configuración </span></a>
-                                </li>
-                            <% end %>
-                     <%else%>
-                            <% if current_user.admin?%>
-                                <li class="submenu">
-                                    <a href="/admin"><i class="fas fa-users-cog"></i><span> Configuración </span></a>
-                                </li>
-                            <% end %>
-                     <%end%>
+                    
                              
 
         <style>

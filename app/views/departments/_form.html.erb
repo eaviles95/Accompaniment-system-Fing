@@ -1,45 +1,26 @@
 
 <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
-          <div class="card mb-3">
-            <div class="card-body">
-
-            
-
-                <%= form_with(model: department, local: true) do |form| %>
-                  <% if department.errors.any? %>
-                    <div id="error_explanation">
-                      <h2><%= pluralize(department.errors.count, "error") %> prohibited this department from being saved:</h2>
-
-                      <ul>
-                      <% department.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                      <% end %>
-                      </ul>
-                    </div>
-                  <% end %>
-
-                  <div class="form-group col-md-3">
-                    <div class="field">
-                      <%= form.label :nombre, :label=>"Nombre" %>
-                      <%= form.text_field :name, :required => true, class: "form-control" %>
-                    </div>
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">	
+    <div class="card mb-3">
+      <div class="card-body">
+        <%= bootstrap_form_for(:department, url: departments_path, local: true) do |form| %>
+                <div class="form-group col-md-3">
+                  <%= form.text_field :name,:label=>"Nombre",:required => true,:onkeypress=>"return isWord(event)"%>
+                </div>
                     
-                    <div class="field">
+                    <div class="form-group col-md-3">
                       <%= form.select(:academic_unit_id, options_from_collection_for_select(AcademicUnit.all, :id, :name ),:label=>"Unidad académica",:required => true) %>
                     </div>
 
+                    <input class="btn btn-primary" name="commit" type="submit" value="Guardar">
 
-  
-                    <div class="actions">
-                      <%= form.submit "Guardar", class: "btn btn-primary"%>
-                    </div>
-                  <% end %>
-
-                  </div>
-
-                  
+                  </div>  
             </div>
-          </div>  
-        </div>
-</div>
+            <% end %>            
+  </div>
+</div>  
+      
+
+
+
+
