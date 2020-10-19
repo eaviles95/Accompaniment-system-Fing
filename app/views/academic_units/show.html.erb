@@ -50,9 +50,14 @@
                               <div class="col-sm">
                                 <%= link_to 'Ver', department_path(department), class: "btn btn-primary" %>
                               </div>
-                              <div class="col-sm">
+                              <%
+=begin%>
+ <div class="col-sm">
                                 <%= link_to 'Editar', department_path(department) , class: "btn btn-primary"%>
-                              </div>
+                              </div>  
+<%
+=end%>
+                               
                               <div class="col-sm">
                                 <%= link_to 'Eliminar', department_path(department),
                                     method: :delete,

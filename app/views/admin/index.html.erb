@@ -536,14 +536,7 @@
 						                      <% @career.each do |car| %>
 						                       <tr class="text-center">              
 						                       <td> <%=car.code%> </td>
-						                       <td> <%=car.name%> </td>
-						                
-											     
-											    
-											    
-													
-											     
-											     
+						                       <td> <%=car.name%> </td>		     
 			                     <td >
 			                       <%= link_to '<i class="fas fa-edit"></i> Editar'.html_safe,  '#', 'data-target' => "#myModal22_#{car.id}", 'data-toggle' => 'modal', class: "btn btn-warning" %>
 			                       <!-- modal editar tutoria -->
@@ -584,12 +577,7 @@
 			                              </div><!-- /.modal-dialog -->
 			                            </div><!-- /.modal -->
 
-			                      
 
-
-			                  
-			                        
-			                       
 			                        <%= link_to @careers.find(car.id), :method => 'delete', data: { confirm: '¿Está seguro de eliminar esta carrera?' }, class: "btn btn-danger" do %>
 			                        <i class="fas fa-trash"></i> Borrar
 			                        <% end %>
