@@ -203,7 +203,7 @@
 
 
                     <%if request.path.start_with?('/students')%>
-                             <% if current_user.admin? or current_user.coordinador? or current_user.tutor?%>
+                             <% if current_user.coordinador? or current_user.tutor?%>
                                 <li class="submenu">
                                     <a href="#"><i class="fas fa-users"></i><span> Estudiantes </span> <span class="menu-arrow"></span></a>
                                         <ul class="">
@@ -215,7 +215,7 @@
 
                      <%else%>
 
-                            <% if current_user.admin? or current_user.coordinador? or current_user.tutor?%>
+                            <% if  current_user.coordinador? or current_user.tutor?%>
                                 <li class="submenu">
                                     <a href="#"><i class="fas fa-users"></i><span> Estudiantes </span> <span class="menu-arrow"></span></a>
                                         <ul class="list-unstyled">
@@ -231,7 +231,7 @@
 
 
                      <%if request.path.start_with?('/tutors')%>
-                             <% if current_user.admin? or current_user.coordinador? %>
+                             <% if current_user.coordinador? %>
                             <li class="submenu">
                                 <a href="#"><i class="fas fa-chalkboard-teacher"></i><span> Tutores </span> <span class="menu-arrow"></span></a>
                                     <ul class="list-unstyled">
@@ -243,7 +243,7 @@
                             </li>
                              <% end %>
                       <%else%>
-                            <% if current_user.admin? or current_user.coordinador? %>
+                            <% if current_user.coordinador? %>
                             <li class="submenu">
                                 <a href="#"><i class="fas fa-chalkboard-teacher"></i><span> Tutores </span> <span class="menu-arrow"></span></a>
                                     <ul class="list-unstyled">
@@ -261,9 +261,9 @@
                                 <li class="submenu">
                                     <a href="#"><i class="far fa-calendar-alt"></i><span> Actividades </span> <span class="menu-arrow"></span></a>
                                         <ul >
-                                            <% if current_user.admin? or current_user.coordinador? or current_user.tutor?%>
+                                            <% if current_user.coordinador? or current_user.tutor?%>
                                             <li><a class="activeoption active" href="/tutorials"> Tutorías</a></li><%end%>
-                                            <% if current_user.admin? or current_user.coordinador? or current_user.supervisor?%>
+                                            <% if  current_user.coordinador? or current_user.supervisor?%>
                                              <li><a  href="/activities"> Calendario</a></li> <%end%>
                                            <!--  <li><a href="/tutors"> Otras</a></li> -->
                                         </ul>

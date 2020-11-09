@@ -31,9 +31,13 @@
                               <div class="col-sm">
                                 <%= link_to 'Ver', academic_unit_path(academic_unit), class: "btn btn-primary" %>
                               </div>
-                              <div class="col-sm">
+                              <%
+=begin%>
+ <div class="col-sm">
                                 <%= link_to 'Editar', edit_academic_unit_path(academic_unit) , class: "btn btn-primary"%>
-                              </div>
+                              </div> 
+<%
+=end%>
                               <div class="col-sm">
                                 <%= link_to 'Eliminar', academic_unit_path(academic_unit),
                                     method: :delete,
